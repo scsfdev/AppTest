@@ -6,27 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".Test1Activity">
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="textView2,textView3,textView4,textView5,
+textView6,textView7,textView8,textView9,textView10,spinLoc,spinSupCode,etPartNo,
+etDesc,etExpiryDate,etOriginalQty,etCountQty,etRemainQty,tvRecord, groupView,groupInput" />
+
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/groupView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        app:constraint_referenced_ids="btnPrevious,btnNext" />
+        app:constraint_referenced_ids="btnPrevious,btnNext, btnNew, textView10, tvRecord" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/groupInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:constraint_referenced_ids="btnSave,btnClear" />
+        app:constraint_referenced_ids="btnSave,btnClear,btnView" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="514dp" />
+        app:layout_constraintGuide_begin="145dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -40,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="78dp" />
+        app:layout_constraintGuide_begin="77dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -71,6 +80,7 @@
 
 
     <Button
+        android:id="@+id/btnLoadXls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Load XLS"
@@ -129,6 +139,7 @@
         android:id="@+id/etPartNo"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:inputType="none"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
@@ -166,6 +177,7 @@
         android:id="@+id/etExpiryDate"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:inputType="none"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/textView6" />
@@ -260,20 +272,37 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Clear"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnSave"
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="View"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnClear"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <Button
+        android:id="@+id/btnTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnPrevious"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="Previous"
-        app:layout_constraintEnd_toStartOf="@+id/btnNext"
+        app:layout_constraintEnd_toStartOf="@+id/btnNew"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnNext"
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <Button
@@ -281,6 +310,16 @@
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="Next"
+        app:layout_constraintEnd_toStartOf="@+id/btnPrevious"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <Button
+        android:id="@+id/btnNew"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="New"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnPrevious"

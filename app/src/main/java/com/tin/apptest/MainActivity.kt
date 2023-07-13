@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val hasPermissions = permissions.all { ActivityCompat.checkSelfPermission(this,it) == PackageManager.PERMISSION_GRANTED }
-
         if(hasPermission(*permissions)){
             // Enable main controls.
         }else if (shouldShowRequestPermissionRationale(permissions[0])){
@@ -55,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     private fun showPermissionDialog() {
         val builder = AlertDialog.Builder(this)
         builder.setMessage("The app needs to have Write External Storage Permission.\nPlease grant the permission on next screen!")
-            .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i ->
+            .setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
                 ActivityCompat.requestPermissions(this,permissions,101)
             })
         builder.create()
