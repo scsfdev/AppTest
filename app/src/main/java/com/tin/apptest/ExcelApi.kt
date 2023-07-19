@@ -11,7 +11,7 @@ import java.io.File
 import java.io.FileNotFoundException
 
 class ExcelApi(private val context: Context) {
-    private val TAG = "APP_TEST"
+    val TAG = "APP_TEST"
     private val mainDataDir = File(Environment.getExternalStorageDirectory(), "Test")
     private val xlsFile = "myExcel.xls"
 
@@ -125,4 +125,26 @@ class ExcelApi(private val context: Context) {
         return lstLocCode
     }
 
+
+    fun deleteRow(row2Delete: Int) : Boolean{
+        try {
+            openXls()
+
+            val wSheet = writeWb?.getSheet(0)
+
+            val iRows = wSheet?.rows
+            if (iRows != null) {
+                if(iRows > row2Delete){
+                    wSheet.removeRow(row2Delete)
+                }
+            }
+            return true
+        }catch(e: Exception){
+            Log.e(TAG, e.message.toString())
+        }finally {
+            closeXls()
+        }
+
+        return false
+    }
 }

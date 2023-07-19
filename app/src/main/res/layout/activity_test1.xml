@@ -213,6 +213,7 @@ etDesc,etExpiryDate,etOriginalQty,etCountQty,etRemainQty,tvRecord, groupView,gro
     <EditText
         android:id="@+id/etCountQty"
         android:layout_width="70dp"
+        android:inputType="none"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -288,12 +289,22 @@ etDesc,etExpiryDate,etOriginalQty,etCountQty,etRemainQty,tvRecord, groupView,gro
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <Button
-        android:id="@+id/btnTest"
+        android:id="@+id/btnTest1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TEST"
+        android:layout_marginBottom="28dp"
+        android:text="SHOW SIP"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnTest2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="DELETE"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toStartOf="@+id/btnTest1" />
 
     <Button
         android:id="@+id/btnPrevious"
