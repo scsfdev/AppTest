@@ -89,7 +89,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadTest2(){
-
+        val intent = Intent(this,Test2Activity::class.java)
+        this.startActivity(intent)
     }
 
     private fun loadTest3(){
